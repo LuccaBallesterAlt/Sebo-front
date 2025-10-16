@@ -39,7 +39,7 @@ export default function ItemProposta({ proposta, propostas, setPropostas }: list
   }
 
   async function responderProposta() {
-    const respostaRevenda = prompt(`Resposta da Revenda para "${proposta.descricao}"`)
+    const respostaRevenda = prompt(`Resposta do sebo para "${proposta.descricao}"`)
 
     if (respostaRevenda == null || respostaRevenda.trim() == "") {
       return
@@ -70,7 +70,7 @@ export default function ItemProposta({ proposta, propostas, setPropostas }: list
   return (
     <tr key={proposta.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
       <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-        <img src={proposta.anuncio.livro.imagem_url} alt="Foto do Carro"
+        <img src={proposta.anuncio.livro.imagem_url} alt="Foto do livro"
           style={{ width: 200 }} />
       </th>
       <td className={"px-6 py-4"}>

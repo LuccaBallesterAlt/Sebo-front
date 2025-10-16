@@ -16,7 +16,7 @@ export default function ItemAnuncio({ anuncio, anuncios, setAnuncios }: listaAnu
 
   async function excluirAnuncio() {
     if (!admin || admin.nivel == 1) {
-      alert("Você não tem permissão para excluir veículos");
+      alert("Você não tem permissão para excluir anuncios");
       return;
     }
 
@@ -34,16 +34,16 @@ export default function ItemAnuncio({ anuncio, anuncios, setAnuncios }: listaAnu
       if (response.status == 200) {
         const anuncios2 = anuncios.filter(x => x.id != anuncio.id)
         setAnuncios(anuncios2)
-        alert("Carro excluído com sucesso")
+        alert("Anuncio excluído com sucesso")
       } else {
-        alert("Erro... Carro não foi excluído")
+        alert("Erro... Anuncio não foi excluído")
       }
     }
   }
 
   async function alterarDestaque() {
 
-    const response = await fetch(`${apiUrl}/carros/destacar/${anuncio.id}`,
+    const response = await fetch(`${apiUrl}/anuncios/destacar/${anuncio.id}`,
       {
         method: "PATCH",
         headers: {
